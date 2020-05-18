@@ -1,53 +1,40 @@
 package com.example.demo.arrayPractice;
-// Java program for reversal algorithm of array rotation 
-import java.io.*; 
 
-class LeftRotate { 
-	/* Function to left rotate arr[] of size n by d */
-	static void leftRotate(int arr[], int d) 
-	{ 
+import java.io.*;
 
-		if (d == 0) 
-			return; 
-		int n = arr.length; 
-		rvereseArray(arr, 0, d - 1); 
-		rvereseArray(arr, d, n - 1); 
-		rvereseArray(arr, 0, n - 1); 
-	} 
+class LeftRotate {
+	static void leftRotate(int arr[], int d) {
 
-	/*Function to reverse arr[] from index start to end*/
-	static void rvereseArray(int arr[], int start, int end) 
-	{ 
-		int temp; 
-		while (start < end) { 
-			temp = arr[start]; 
-			arr[start] = arr[end]; 
-			arr[end] = temp; 
-			start++; 
-			end--; 
-		} 
-	} 
+		if (d == 0)
+			return;
+		int n = arr.length;
+		rvereseArray(arr, 0, d - 1);
+		rvereseArray(arr, d, n - 1);
+		rvereseArray(arr, 0, n - 1);
+	}
 
-	/*UTILITY FUNCTIONS*/
-	/* function to print an array */
-	static void printArray(int arr[]) 
-	{ 
-		for (int i = 0; i < arr.length; i++) 
-			System.out.print(arr[i] + " "); 
-	} 
+	static void rvereseArray(int arr[], int start, int end) {
+		int temp;
+		while (start < end) {
+			temp = arr[start];
+			arr[start] = arr[end];
+			arr[end] = temp;
+			start++;
+			end--;
+		}
+	}
 
-	/* Driver program to test above functions */
-	public static void main(String[] args) 
-	{ 
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7 }; 
-		int n = arr.length; 
-		int d = 2; 
+	static void printArray(int arr[]) {
+		for (int i = 0; i < arr.length; i++)
+			System.out.print(arr[i] + " ");
+	}
 
-		// in case the rotating factor is 
-		// greater than array length 
-		d = d % n; 
-		leftRotate(arr, d); // Rotate array by d 
-		printArray(arr); 
-	} 
-} 
-/*This code is contributed by Devesh Agrawal*/
+	public static void main(String[] args) {
+		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
+		int n = arr.length;
+		int d = 2;
+		d = d % n;
+		leftRotate(arr, d); // Rotate array by d
+		printArray(arr);
+	}
+}

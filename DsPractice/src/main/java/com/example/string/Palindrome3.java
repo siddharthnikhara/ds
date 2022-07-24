@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Palindrome3 {
     static boolean sentencePalindrome(String s) {
+        s =s.toLowerCase();
         char[] str = s.toCharArray();
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
@@ -13,10 +14,10 @@ public class Palindrome3 {
         String string = "";
         String reverse = "";
         for (Character character : stack) {
-            reverse += Character.toLowerCase(character);
+            string += character;
         }
         while (!stack.isEmpty()) {
-            string += Character.toLowerCase(stack.pop());
+            reverse += stack.pop();
         }
         return string.equals(reverse);
     }
@@ -25,8 +26,7 @@ public class Palindrome3 {
         String str = "Too hot to hoot.";
         if (sentencePalindrome(str)) {
             System.out.println("Sentence is palindrome");
-        }
-        else {
+        } else {
             System.out.println("Sentence is not" + " " + "palindrome");
         }
     }

@@ -10,6 +10,9 @@ public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
         String mResult = "";
         String cStr = strs[0];
+            if(cStr.length()<=1){
+                return cStr;
+            }
         for (int j = 1; j < strs.length; j++) {
             String s = strs[j];
             for (int i = 0; i < s.length(); i++) {

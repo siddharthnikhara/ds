@@ -21,10 +21,7 @@ public class GroupAnagrams {
         }
         List<List<String>> result = new ArrayList<>();
         for (String s : map.keySet()) {
-            List<String> values = map.get(s);
-            if (values.size() >= 1) {
-                result.add(values);
-            }
+            result.add(map.get(s));
         }
         return result;
     }

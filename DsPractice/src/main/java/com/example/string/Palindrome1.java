@@ -6,13 +6,13 @@ public class Palindrome1 {
         int h = str.length() - 1;
         str = str.toLowerCase();
         while (l <= h) {
-            char getAtl = str.charAt(l);
-            char getAth = str.charAt(h);
-            if (!(getAtl >= 'a' && getAtl <= 'z')) {
+            char left = str.charAt(l);
+            char right = str.charAt(h);
+            if (!(left >= 'a' && left <= 'z')) {
                 l++;
-            } else if (!(getAth >= 'a' && getAth <= 'z')) {
+            } else if (!(right >= 'a' && right <= 'z')) {
                 h--;
-            } else if (getAtl == getAth) {
+            } else if (left == right) {
                 l++;
                 h--;
             } else {

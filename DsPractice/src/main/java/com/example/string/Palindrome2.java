@@ -5,12 +5,9 @@ public class Palindrome2 {
         if (s.isEmpty()) {
             return true;
         }
-        String str = s.toLowerCase();
-        str = str.replaceAll("[^a-zA-Z0-9]", "");
-        StringBuilder revstr = new StringBuilder(str);
-        revstr.reverse();
-        String rstr = revstr.toString();
-        if (str.equals(rstr)) {
+        s = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String rstr = new StringBuffer(s).reverse().toString();
+        if (s.equals(rstr)) {
             return true;
         }
         return false;

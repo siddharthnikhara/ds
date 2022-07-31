@@ -1,29 +1,30 @@
 package com.example.string;
 
 public class LongestSubstringWithoutRepeatingChar1 {
-    public static int longestUniqueSubsttr(String str) {
+
+    public static String longestUniqueSubsttr(String str) {
         String test = "";
         int maxLength = -1;
         if (str.isEmpty()) {
-            return 0;
+            return "";
         } else if (str.length() == 1) {
-            return 1;
+            return str;
         }
         for (char c : str.toCharArray()) {
             String current = String.valueOf(c);
             if (test.contains(current)) {
-                test = test.substring(test.indexOf(current)+ 1);
+                test = test.substring(test.indexOf(current) + 1);
             }
-            test = test + String.valueOf(c);
+            test = test + current;
             maxLength = Math.max(test.length(), maxLength);
         }
-        return maxLength;
+        return test;
     }
 
     public static void main(String[] args) {
         String str = "dvdf";
         System.out.println("The input string is " + str);
-        int len = longestUniqueSubsttr(str);
+        String len = longestUniqueSubsttr(str);
         System.out.println("The length of the longest non-repeating character substring is " + len);
     }
 }

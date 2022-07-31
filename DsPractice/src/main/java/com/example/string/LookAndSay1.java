@@ -25,7 +25,7 @@ public class LookAndSay1 {
     }
 
     public static void main(String[] args) {
-        int N = 5;
+        int N = 4;
         System.out.println(countnndSay(N));
     }
 }

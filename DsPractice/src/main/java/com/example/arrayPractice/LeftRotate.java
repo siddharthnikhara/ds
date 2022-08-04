@@ -1,12 +1,10 @@
 package com.example.arrayPractice;
 
-import java.io.*;
-
 class LeftRotate {
 	static void leftRotate(int arr[], int d) {
-
-		if (d == 0)
+		if (d == 0) {
 			return;
+		}
 		int n = arr.length;
 		rvereseArray(arr, 0, d - 1);
 		rvereseArray(arr, d, n - 1);
@@ -32,7 +30,7 @@ class LeftRotate {
 	public static void main(String[] args) {
 		int arr[] = { 1, 2, 3, 4, 5, 6, 7 };
 		int n = arr.length;
-		int d = 2;
+		int d = 3;
 		d = d % n;
 		leftRotate(arr, d); // Rotate array by d
 		printArray(arr);

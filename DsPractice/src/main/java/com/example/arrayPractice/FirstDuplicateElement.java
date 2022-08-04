@@ -11,7 +11,7 @@ public abstract class FirstDuplicateElement {
 		Set<Integer>set = new HashSet<>();
 		for(int i=0;i<a.length;i++) {
 			if(set.contains(a[i])) {
-				temp=i;
+				temp = i;
 				break;
 			}else {
 				set.add(a[i]);

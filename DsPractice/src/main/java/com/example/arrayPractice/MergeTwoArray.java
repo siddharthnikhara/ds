@@ -1,5 +1,9 @@
 package com.example.arrayPractice;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 public class MergeTwoArray {
 	public static void main(String[] args) {
 		int a[] = { 10, 20, 30 };

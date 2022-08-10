@@ -31,7 +31,6 @@ public class ZigZagDiagonalTraversalOfMatrix1 {
                 {13, 14, 15, 16},
                 {17, 18, 19, 20},
         };
-
         diagonalOrder(arr, n, m);
     }
 }

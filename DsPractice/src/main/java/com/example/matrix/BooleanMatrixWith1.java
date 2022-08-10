@@ -1,6 +1,6 @@
 package com.example.matrix;
 
-public class BooleanMatrix {
+public class BooleanMatrixWith1 {
     public static void main(String[] args) {
         int a[][] = {{1, 0}, {0, 0}};
         booleanMatrix(a);

@@ -35,15 +35,55 @@ public class LinkedList1 {
             node = node.next;
         }
     }
+
+    public static LinkedList1 deleteByKey(LinkedList1 list, int key) {
+        Node curr_node = list.head;
+        Node prev = null;
+        if (curr_node != null && curr_node.data == key) {
+            list.head = curr_node.next;
+            return list;
+        }
+        while (curr_node != null && curr_node.data != key) {
+            prev = curr_node;
+            curr_node = curr_node.next;
+        }
+        if (curr_node != null) {
+            prev.next = curr_node.next;
+        }
+        if (curr_node == null) {
+            System.out.println(key + " not found");
+        }
+        return list;
+    }
+
+    public static LinkedList1 deleteAtPosition(LinkedList1 list, int index) {
+        LinkedList1.Node currNode = list.head, prev = null;
+        if (index == 0 && currNode != null) {
+            list.head = currNode.next;
+            System.out.println(index + " position element deleted");
+            return list;
+        }
+        int counter = 0;
+        while (currNode != null) {
+
+            if (counter == index) {
+                prev.next = currNode.next;
+                System.out.println(index + " position element deleted");
+                break;
+            } else {
+                prev = currNode;
+                currNode = currNode.next;
+                counter++;
+            }
+        }
+        if (currNode == null) {
+            System.out.println(index + " position element not found");
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
-        /* Start with the empty list. */
         LinkedList1 list = new LinkedList1();
-
-        //
-        // ******INSERTION******
-        //
-
-        // Insert the values
         list = insert(list, 1);
         list = insert(list, 2);
         list = insert(list, 3);
@@ -52,31 +92,9 @@ public class LinkedList1 {
         list = insert(list, 6);
         list = insert(list, 7);
         list = insert(list, 8);
-
-        // Print the LinkedList1
         display(list);
-    }
-
-    public static LinkedList1 deleteByKey(LinkedList1 list, int key){
-        Node curr_node=list.head;
-        Node prev = null;
-        if(curr_node!=null && curr_node.data==key){
-            list.head = curr_node.next;
-            return list;
-        }
-        while(curr_node!=null && curr_node.data!=key){
-            prev=curr_node;
-            curr_node=curr_node.next;
-        }
-        if(curr_node!=null){
-            prev.next=curr_node.next;
-        }
-        // If key was not present in linked list
-        // currNode should be null
-        if (curr_node == null) {
-            // Display the message
-            System.out.println(key + " not found");
-        }
-        return list;
+        deleteByKey(list,7);
+        deleteAtPosition(list,4);
+        display(list);
     }
 }

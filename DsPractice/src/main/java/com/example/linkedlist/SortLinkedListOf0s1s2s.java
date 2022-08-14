@@ -1,16 +1,16 @@
 package com.example.linkedlist;
 
 public class SortLinkedListOf0s1s2s {
-    static class LinkedList {
-        Node head;
+    static LinkedList.Node head;
 
-        class Node {
+    static class LinkedList {
+
+        static class Node {
             int data;
             Node next;
 
             Node(int d) {
                 data = d;
-                next = null;
             }
         }
 
@@ -18,6 +18,7 @@ public class SortLinkedListOf0s1s2s {
             int count[] = {0, 0, 0};
 
             Node ptr = head;
+
             while (ptr != null) {
                 count[ptr.data]++;
                 ptr = ptr.next;
@@ -37,13 +38,18 @@ public class SortLinkedListOf0s1s2s {
             }
         }
 
-        public void push(int new_data) {
+        private static void insertTheTail(Node tail, Node temp) {
+            tail.next = temp;
+            tail = temp;
+        }
+
+        public static void push(int new_data) {
             Node new_node = new Node(new_data);
             new_node.next = head;
             head = new_node;
         }
 
-        void printList() {
+        static void printList() {
             Node temp = head;
             while (temp != null) {
                 System.out.print(temp.data + " ");
@@ -51,27 +57,27 @@ public class SortLinkedListOf0s1s2s {
             }
             System.out.println();
         }
+    }
 
-        public static void main(String args[]) {
-            LinkedList llist = new LinkedList();
+    public static void main(String args[]) {
+        LinkedList llist = new LinkedList();
 
-            llist.push(0);
-            llist.push(1);
-            llist.push(0);
-            llist.push(2);
-            llist.push(1);
-            llist.push(1);
-            llist.push(2);
-            llist.push(1);
-            llist.push(2);
+        llist.push(0);
+        llist.push(1);
+        llist.push(0);
+        llist.push(2);
+        llist.push(1);
+        llist.push(1);
+        llist.push(2);
+        llist.push(1);
+        llist.push(2);
 
-            System.out.println("Linked List before sorting");
-            llist.printList();
+        System.out.println("Linked List before sorting");
+        llist.printList();
 
-            llist.sortList();
+        llist.sortList();
 
-            System.out.println("Linked List after sorting");
-            llist.printList();
-        }
+        System.out.println("Linked List after sorting");
+        llist.printList();
     }
 }

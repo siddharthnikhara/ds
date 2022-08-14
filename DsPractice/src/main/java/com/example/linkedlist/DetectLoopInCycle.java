@@ -20,12 +20,12 @@ public class DetectLoopInCycle {
     }
 
     boolean detectLoop() {
-        Node slow_p = head, fast_p = head;
+        Node slow = head, fast = head;
         boolean flag = false;
-        while (slow_p != null && fast_p != null  && fast_p.next != null) {
-            slow_p = slow_p.next;
-            fast_p = fast_p.next.next;
-            if (slow_p == fast_p) {
+        while (slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
                 flag = true;
                 break;
             }

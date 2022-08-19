@@ -6,25 +6,24 @@ import java.util.Stack;
 
 public class ReverseLevelOrder {
 
-    static class Node2 {
+    static class Node {
         int data;
-        Node2 left;
-        Node2 right;
+        Node left;
+        Node right;
 
-        Node2(int data) {
+        Node(int data) {
             this.data = data;
-            left = right;
         }
     }
 
-    Node2 root1;
+    Node root;
 
-    public void reverseLevelOrder(Node2 node) {
-        Stack<Node2> stack = new Stack<>();
-        Queue<Node2> queue = new LinkedList();
+    public void reverseLevelOrder(Node node) {
+        Stack<Node> stack = new Stack<>();
+        Queue<Node> queue = new LinkedList();
         queue.add(node);
 
-        while (queue.isEmpty() == false) {
+        while (!queue.isEmpty()) {
             node = queue.peek();
             queue.remove();
             stack.push(node);
@@ -32,11 +31,9 @@ public class ReverseLevelOrder {
             if (node.right != null) {
                 queue.add(node.right);
             }
-
             if (node.left != null) {
                 queue.add(node.left);
             }
-
         }
         while (stack.empty() == false) {
             node = stack.peek();
@@ -48,15 +45,15 @@ public class ReverseLevelOrder {
 
     public static void main(String[] args) {
         ReverseLevelOrder tree = new ReverseLevelOrder();
-        tree.root1 = new Node2(1);
-        tree.root1.left = new Node2(2);
-        tree.root1.right = new Node2(3);
-        tree.root1.left.left = new Node2(4);
-        tree.root1.left.right = new Node2(5);
-        tree.root1.right.left = new Node2(6);
-        tree.root1.right.right = new Node2(7);
+        tree.root = new Node(1);
+        tree.root.left = new Node(3);
+        tree.root.right = new Node(2);
+//        tree.root.left.left = new Node(4);
+//        tree.root.left.right = new Node(5);
+//        tree.root.right.left = new Node(6);
+//        tree.root.right.right = new Node(7);
         System.out.println("Level Order traversal of binary tree is :");
-        tree.reverseLevelOrder(tree.root1);
+        tree.reverseLevelOrder(tree.root);
     }
 }
 

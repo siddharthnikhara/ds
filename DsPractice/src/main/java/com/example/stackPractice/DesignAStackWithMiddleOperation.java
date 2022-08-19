@@ -13,23 +13,21 @@ public class DesignAStackWithMiddleOperation {
     }
 
     static class MyStack {
-        Node prev;
         Node mid;
-        Node next;
-        Node head;
+        Node node;
         int size;
 
         void push(int data) {
             Node newNode = new Node(data);
             if (size == 0) {
-                head = newNode;
+                node = newNode;
                 mid = newNode;
                 size++;
                 return;
             }
-            head.next = newNode;
-            newNode.prev = head;
-            head = head.next;
+            node.next = newNode;
+            newNode.prev = node;
+            node = node.next;
             if (size % 2 == 0) {
                 mid = mid.next;
             }
@@ -43,13 +41,13 @@ public class DesignAStackWithMiddleOperation {
             }
             if (size != 0) {
                 if (size == 1) {
-                    data = head.data;
-                    head = null;
+                    data = node.data;
+                    node = null;
                     mid = null;
                 } else {
-                    data = head.data;
-                    head = head.prev;
-                    head.next = null;
+                    data = node.data;
+                    node = node.prev;
+                    node.next = null;
                     if (size % 2 != 0) {
                         mid = mid.prev;
                     }
@@ -80,7 +78,7 @@ public class DesignAStackWithMiddleOperation {
         ms.push(88);
         ms.push(99);
 
-       // System.out.println("Popped : " + ms.pop());
+        // System.out.println("Popped : " + ms.pop());
         // System.out.println("Popped : " + ms.pop());
         System.out.println("Middle Element : "
                 + ms.findMiddle());

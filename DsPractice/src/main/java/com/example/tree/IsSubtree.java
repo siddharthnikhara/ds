@@ -1,12 +1,15 @@
 package com.example.tree;
 
-public class Node {
-    int val;
-    Node left;
-    Node right;
+public class IsSubtree {
 
-    Node(int val) {
-        this.val = val;
+    static class Node {
+        int val;
+        Node left;
+        Node right;
+
+        Node(int val) {
+            this.val = val;
+        }
     }
 
     static class BinaryTree {
@@ -57,7 +60,7 @@ public class Node {
         tree.root2.left = new Node(4);
         tree.root2.left.right = new Node(30);
 
-        if (Node.BinaryTree.isSubtree(tree.root1, tree.root2)) {
+        if (BinaryTree.isSubtree(tree.root1, tree.root2)) {
             System.out.println("Tree 2 is subtree of Tree 1 ");
         } else {
             System.out.println("Tree 2 is not a subtree of Tree 1");

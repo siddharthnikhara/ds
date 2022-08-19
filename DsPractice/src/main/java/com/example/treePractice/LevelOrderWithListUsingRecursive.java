@@ -48,6 +48,6 @@ public class LevelOrderWithListUsingRecursive {
         tree.root1.right.right = new TreeNode(7);
 
         System.out.println("Level Order traversal of binary tree is :");
-        levelOrder(tree.root1);
+        System.out.println(levelOrder(tree.root1));
     }
 }

@@ -2,7 +2,7 @@ package com.example.treePractice;
 
 import java.util.ArrayList;
 
-public class LeftViewMyImpl {
+public class LeftView {
     Node root;
 
     static class Node {
@@ -15,27 +15,25 @@ public class LeftViewMyImpl {
         }
     }
 
-    static ArrayList<Integer> leftView(Node root) {
-        ArrayList<Integer> l = new ArrayList();
-        l.add(root.data);
-        while (root.left != null) {
-            ArrayList<Integer> left = leftView1(root.left, l);
-            return l;
+    static void solve(Node root, ArrayList<Integer> ans, int level) {
+        if (root == null) {
+            return;
         }
-        return l;
+        if (level == ans.size()) {
+            ans.add(root.data);
+        }
+        solve(root.left, ans, level + 1);
+        solve(root.right, ans, level + 1);
     }
 
-    static ArrayList<Integer> leftView1(Node root, ArrayList<Integer> l) {
-        if (root == null) {
-            return l;
-        }
-        l.add(root.data);
-        leftView1(root.left, l);
-        return l;
+    static ArrayList<Integer> leftView(Node root) {
+        ArrayList<Integer> ans = new ArrayList();
+        solve(root, ans, 0);
+        return ans;
     }
 
     public static void main(String[] args) {
-        LeftViewMyImpl tree = new LeftViewMyImpl();
+        LeftView tree = new LeftView();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);

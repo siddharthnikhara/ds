@@ -221,27 +221,27 @@ public class BinaryTree {
         tree1.root.left = new Node(4);
         tree1.root.left.right = new Node(5);
 
-        System.out.println("pre order");
-        preOrder(tree.root);
-        System.out.println("in order");
-        inOrder(tree.root);
-        System.out.println("post order");
-        postOrder(tree.root);
-        System.out.println("level order");
-        levelOrder(tree.root);
-        System.out.println("count of nodes");
-        System.out.println(countOfNodes(tree.root));
-        System.out.println("sum of nodes");
-        System.out.println(sumOfNodes(tree.root));
-        System.out.println("height of tree");
-        System.out.println(heightOfTree(tree.root));
-        System.out.println("diameter of tree");
-        System.out.println(diamOfTree(tree.root));
-        System.out.println("subTree");
-        isSubTree(tree.root, tree1.root);
-        System.out.println("Diameter");
-        TreeInfo.diameter(tree.root);
+//        System.out.println("pre order");
+//        preOrder(tree.root);
+//        System.out.println("in order");
+//        inOrder(tree.root);
+//        System.out.println("post order");
+//        postOrder(tree.root);
+//        System.out.println("level order");
+//        levelOrder(tree.root);
+//        System.out.println("count of nodes");
+//        System.out.println(countOfNodes(tree.root));
+//        System.out.println("sum of nodes");
+//        System.out.println(sumOfNodes(tree.root));
+//        System.out.println("height of tree");
+//        System.out.println(heightOfTree(tree.root));
+//        System.out.println("diameter of tree");
+//        System.out.println(diamOfTree(tree.root));
+//        System.out.println("subTree");
+//        isSubTree(tree.root, tree1.root);
+//        System.out.println("Diameter");
+//        TreeInfo.diameter(tree.root);
         System.out.println("sum at level");
-        sumAtLevel(tree.root, 3);
+        sumAtLevel(tree.root, 2);
     }
 }

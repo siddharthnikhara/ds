@@ -30,8 +30,8 @@ public class MinimumMaximumElementInBST {
             return -1;
         }
         Node current = node;
-        while(current.left != null){
-            current=current.left;
+        while (current.left != null) {
+            current = current.left;
         }
         return current.data;
     }
@@ -41,8 +41,8 @@ public class MinimumMaximumElementInBST {
             return -1;
         }
         Node current = node;
-        while(current.right != null){
-            current=current.right;
+        while (current.right != null) {
+            current = current.right;
         }
         return current.data;
     }

@@ -59,7 +59,7 @@ public class DetectCycleInUndirectedGraphBFS {
 //        addEdge(1, 2, false);
 //        addEdge(2, 0, false);
 //        addEdge(2, 3, false);
-        if (isCyclicDisconntected(4)) {
+        if (isCyclicDisconntected(5)) {
             System.out.println("Yes");
         } else {
             System.out.println("No");

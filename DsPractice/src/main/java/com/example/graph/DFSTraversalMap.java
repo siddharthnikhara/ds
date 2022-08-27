@@ -4,7 +4,7 @@ import java.util.*;
 
 public class DFSTraversalMap {
 
-    static void addEdge( int u, int v, boolean flag,Map<Integer, ArrayList<Integer>> map) {
+    static void addEdge(int u, int v, boolean flag, Map<Integer, ArrayList<Integer>> map) {
         map.get(u).add(v);
         if (flag == false) {
             map.get(v).add(u);
@@ -44,6 +44,10 @@ public class DFSTraversalMap {
 //        addEdge(map, 2, 3, false);
 //        addEdge(map, 3, 3, false);
         System.out.println("Following is Depth First Traversal " + "(starting from vertex 2)");
-        DFS(2, visited, map);
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                DFS(2, visited, map);
+            }
+        }
     }
 }

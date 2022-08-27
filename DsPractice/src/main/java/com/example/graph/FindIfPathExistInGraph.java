@@ -2,7 +2,7 @@ package com.example.graph;
 
 import java.util.*;
 
-public class BFSTraversalMapAnotherWay {
+public class FindIfPathExistInGraph {
 
     static void addEdge(int u, int v, boolean flag, Map<Integer, LinkedHashSet<Integer>> map) {
         map.get(u).add(v);
@@ -20,16 +20,12 @@ public class BFSTraversalMapAnotherWay {
         }
     }
 
-    static Set<Integer> BFS(int n, Map<Integer, LinkedHashSet<Integer>> map, Map<Integer, Boolean> visited, Set<Integer> set) {
+    static void BFS(int n, Map<Integer, LinkedHashSet<Integer>> map, Map<Integer, Boolean> visited) {
         Queue<Integer> queue = new LinkedList<Integer>();
         visited.put(n, true);
         queue.add(n);
         while (queue.size() != 0) {
             int frontNode = queue.remove();
-            if (!set.contains(frontNode)) {
-                System.out.println(frontNode);
-            }
-            set.add(frontNode);
             for (int i : map.get(frontNode)) {
                 if (!visited.getOrDefault(i, false)) {
                     visited.put(i, true);
@@ -37,13 +33,13 @@ public class BFSTraversalMapAnotherWay {
                 }
             }
         }
-        return set;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+
         Map<Integer, LinkedHashSet<Integer>> map = new HashMap();
         Map<Integer, Boolean> visited = new HashMap();
-        int V = 5;
+        int V = 9;
         for (int i = 0; i < V; i++) {
             map.put(i, new LinkedHashSet<Integer>());
         }
@@ -54,25 +50,13 @@ public class BFSTraversalMapAnotherWay {
         addEdge(1, 4, false, map);
         addEdge(2, 3, false, map);
         addEdge(3, 4, false, map);
+        addEdge(5, 6, false, map);
         printGraph(map);
-        System.out.println("Following is Breadth First Traversal " + "(starting from vertex 6)");
-        Set<Integer> set = new LinkedHashSet<>();
-//        while (map.entrySet().iterator().hasNext()){
-//            int ke = map.entrySet().iterator().next().getKey();
-//            if (!visited.getOrDefault(ke, false)) {
-//                set = BFS(5, map, visited, set);     // infinite loop me ja rahi condition
-//                continue;
-//            }else{
-//                break;
-//            }
-//        }
         for (int i = 0; i < V; i++) {
             if (!visited.getOrDefault(i, false)) {
-                set = BFS(2, map, visited, set);
+                BFS(2, map, visited);
             }
         }
-        System.out.println("Following");
-        set.forEach(System.out::println);
+        System.out.println(visited.getOrDefault(2, false));
     }
 }
-

@@ -21,21 +21,24 @@ public class NonReapatingCQueue {
 
             // check for the non repeating character
             while (!q.isEmpty()) {
-                if (charCount[q.peek() - 'a'] > 1)
+                if (charCount[q.peek() - 'a'] > 1) {
                     q.remove();
+                }
                 else {
                     System.out.print(q.peek() + " ");
                     break;
                 }
             }
-            if (q.isEmpty())
+            if (q.isEmpty()) {
                 System.out.print(-1 + " ");
+            }
         }
-        System.out.println();
+       System.out.println();
+        System.out.println(q.peek());
     }
 
     public static void main(String[] args) {
-        String str = "aaabc";
+        String str = "aaabacb";
         firstNonRepeating(str);
     }
 }

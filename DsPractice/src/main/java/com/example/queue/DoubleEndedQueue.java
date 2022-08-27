@@ -10,6 +10,7 @@ public class DoubleEndedQueue {
     static class deque{
         private DeQueueNode head;
         private DeQueueNode tail;
+
         public deque(){
             head=tail=null;
         }
@@ -35,7 +36,6 @@ public class DoubleEndedQueue {
             }else{
                 head.prev=node;
                 node.next=head;
-                node.prev=null;
                 head=node;
             }
         }
@@ -47,13 +47,11 @@ public class DoubleEndedQueue {
             }else{
                 tail.next=node;
                 node.prev=tail;
-                node.next=null;
                 tail=node;
             }
         }
         void removeFirst(){
             if(!isEmpty()){
-                DeQueueNode node  =head;
                 head=head.next;
                 head.prev=null;
                 return;
@@ -62,7 +60,6 @@ public class DoubleEndedQueue {
         }
         void removeLast(){
             if(!isEmpty()){
-                DeQueueNode node =tail;
                 tail=tail.prev;
                 tail.next=null;
                 return;

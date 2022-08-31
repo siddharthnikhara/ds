@@ -4,9 +4,9 @@ import java.util.Stack;
 
 public class CelebrityProblemUsingStack {
     public static void main(String[] args) {
-        int a[][] = {{0, 1, 0, 1, 0, 0},
-                {0, 1, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0, 0}};
+        int a[][] = {{0, 1, 0},
+                {0, 0, 0},
+                {0, 1, 0}};
         System.out.println(checkCelebritProblem(a, 3));
     }
 

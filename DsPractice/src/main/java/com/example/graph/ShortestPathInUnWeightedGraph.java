@@ -51,6 +51,7 @@ public class ShortestPathInUnWeightedGraph {
         int t = 8;
         Queue<Integer> queue = new LinkedList<Integer>();
         visited.put(s, true);
+        parent.put(s,-1);//sayad ye aaega, and aana chahiye, but verify once with internet code
         queue.add(s);
 
         while (queue.size() != 0) {

@@ -26,7 +26,7 @@ public class DuplicateParanthesis {
     }
 
     public static void main(String[] args) {
-        String str = "(((a+(b))+(c+d)))";
+        String str = "(((a+b+c+d)+(c+d)))";
         if (findDuplicateparenthesis(str)) {
             System.out.println("Duplicate Found ");
         } else {

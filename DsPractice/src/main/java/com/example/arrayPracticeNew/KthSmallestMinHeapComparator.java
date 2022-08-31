@@ -2,7 +2,8 @@ package com.example.arrayPracticeNew;
 
 import java.util.*;
 
-public class KthSmallestMaxHeapComparator {
+public class KthSmallestMinHeapComparator {
+
     static int kthSmallest(int[] v, int N, int K) {
         PriorityQueue<Integer> heap1 = new PriorityQueue<Integer>(new MinHeapComparator());
         for (int i = 0; i < N; ++i) {
@@ -15,7 +16,7 @@ public class KthSmallestMaxHeapComparator {
     }
 
     public static void main(String[] args) {
-        int[] vec = {10, 5, 4, 3, 48, 15, 6, 2, 33, 53, 10};
+        int[] vec = {10, 5, 4, 3, 4,48, 15, 6, 2, 33, 53, 10};
         int N = vec.length;
         int K = 4;
         System.out.println("Kth Smallest Element: " + kthSmallest(vec, N, K));

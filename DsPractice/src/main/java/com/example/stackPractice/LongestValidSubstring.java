@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class LongestValidSubstring {
     public static void main(String[] args) {
-        String s = "()(()))))";
+        String s = "())(()))))";
         int size = 0;
         Stack<Character> stack = new Stack();
         for (int i = 0; i < s.length(); i++) {

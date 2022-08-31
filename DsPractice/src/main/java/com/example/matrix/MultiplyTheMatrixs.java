@@ -2,8 +2,8 @@ package com.example.matrix;
 
 public class MultiplyTheMatrixs {
     public static void main(String[] args) {
-        int s1[][]={{1,2,3},{4,5,6}};
-        int s2[][]={{1,2},{3,4},{5,6}};
+        int s1[][]={{1,4,3},{2,6,8}};
+        int s2[][]={{2,1},{5,4},{3,3}};
         int res[][]=multiplyTheMatrixs(s1,s2);
         for(int i=0;i< res.length;i++){
             for(int j=0;j<res.length;j++){

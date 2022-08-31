@@ -3,10 +3,10 @@ package com.example.matrix;
 public class NumberOfIsland {
     public static void main(String[] args) {
         char M[][] = new char[][] { { '1', '1', '0', '0', '0' },
-                { '0', '1', '0', '0', '1' },
-                { '1', '0', '0', '1', '1' },
-                { '0', '0', '0', '0', '0' },
-                { '1', '0', '1', '0', '1' } };
+                                    { '0', '1', '0', '0', '1' },
+                                    { '1', '0', '0', '1', '1' },
+                                    { '0', '0', '0', '0', '0' },
+                                    { '1', '0', '1', '0', '1' } };
         System.out.println("Number of islands is: " + numsOfIsland(M));
     }
    static int numsOfIsland(char[][] grid){

@@ -55,6 +55,6 @@ public class ReverseLevelOrderWithList {
         tree.root.right.right = new Node(7);
         System.out.println("Level Order traversal of binary tree is :");
         ArrayList<Integer> l = tree.reverseLevelOrder(tree.root);
-        l.forEach(System.out::println);
+        l.forEach(i ->  System.out.print(i+" "));
     }
 } 

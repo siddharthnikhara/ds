@@ -22,12 +22,9 @@ public class ReverseLevelOrder {
         Stack<Node> stack = new Stack<>();
         Queue<Node> queue = new LinkedList();
         queue.add(node);
-
         while (!queue.isEmpty()) {
-            node = queue.peek();
-            queue.remove();
+            node = queue.remove();
             stack.push(node);
-
             if (node.right != null) {
                 queue.add(node.right);
             }
@@ -36,9 +33,8 @@ public class ReverseLevelOrder {
             }
         }
         while (stack.empty() == false) {
-            node = stack.peek();
-            System.out.print(node.data + " ");
-            stack.pop();
+            System.out.print(stack.pop().data + " ");
+
         }
     }
 

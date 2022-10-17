@@ -12,8 +12,7 @@ public class PrintPerm {
         for(int i=0;i<str.length();i++){
             char currChar = str.charAt(i);
             //--->"ab" "ca'
-            String newStr = str.substring(0,i)+str.substring(i+1);
-            printPerm(newStr,printPerm+currChar);
+           printPerm(str.substring(0,i)+str.substring(i+1),currChar+printPerm);
         }
     }
 }

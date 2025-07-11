@@ -22,7 +22,7 @@ public class LongestSubstringWithoutRepeatingChar1 {
     }
 
     public static void main(String[] args) {
-        String str = "dvdf";
+        String str = "dvdertyuif";
         System.out.println("The input string is " + str);
         String len = longestUniqueSubsttr(str);
         System.out.println("The length of the longest non-repeating character substring is " + len);

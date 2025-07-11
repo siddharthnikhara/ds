@@ -4,20 +4,18 @@ import java.util.Arrays;
 
 public class nextPermutation {
 
-    public static int[] swap(int data[], int left, int right) {
+    public static void swap(int data[], int left, int right) {
 		int temp = data[left];
         data[left] = data[right];
         data[right] = temp;
-		return data;
     }
 
-    public static int[] reverse(int data[], int left, int right) {
+    public static void reverse(int data[], int left, int right) {
 		while (left < right) {
             int temp = data[left];
             data[left++] = data[right];
             data[right--] = temp;
         }
-		return data;
     }
 
     public static boolean findNextPermutation(int data[]) {
@@ -41,8 +39,8 @@ public class nextPermutation {
                 break;
             }
         }
-		data = swap(data, nextGreater, last);
-		data = reverse(data, last + 1, data.length - 1);
+		swap(data, nextGreater, last);
+        reverse(data, last + 1, data.length - 1);
 		return true;
     }
 	public static void main(String args[]) {

@@ -6,9 +6,9 @@ class LeftRotate {
             return;
         }
         int n = arr.length;
+        rvereseArray(arr, 0, d-1);
+        rvereseArray(arr, d, n- 1);
         rvereseArray(arr, 0, n - 1);
-        rvereseArray(arr, 0, n - d - 1);
-        rvereseArray(arr, n - d, n - 1);
     }
 
     static void rvereseArray(int arr[], int start, int end) {
@@ -30,7 +30,7 @@ class LeftRotate {
     public static void main(String[] args) {
         int arr[] = {1, 2, 3, 4, 5,6,7};
         int n = arr.length;
-        int d = 2;
+        int d = 3;
         d = d % n;
         leftRotate(arr, d); // Rotate array by d
         printArray(arr);

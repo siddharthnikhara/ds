@@ -43,7 +43,8 @@ public class removeDuplicates {
         start.next.next.next = new node(11);
         start.next.next.next.next = new node(12);
         start.next.next.next.next.next = new node(11);
-        start.next.next.next.next.next.next = new node(10);
+        start.next.next.next.next.next.next = new node(8);
+        start.next.next.next.next.next.next.next = new node(10);
 
         System.out.println("Linked list before removing duplicates :");
         printList(start);

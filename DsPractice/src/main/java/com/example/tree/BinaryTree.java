@@ -242,6 +242,6 @@ public class BinaryTree {
 //        System.out.println("Diameter");
 //        TreeInfo.diameter(tree.root);
         System.out.println("sum at level");
-        sumAtLevel(tree.root, 1);
+        sumAtLevel(tree.root, 2);
     }
 }

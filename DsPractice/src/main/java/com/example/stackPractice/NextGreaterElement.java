@@ -13,11 +13,9 @@ public class NextGreaterElement {
         Stack<Integer> stack = new Stack<>();
         int output[] = new int[n];
 
-        for(int i=arr.length-1;i>=0;i--){
-            if(!stack.isEmpty()){
-                while (!stack.isEmpty() && stack.peek() <= arr[i]){
-                    stack.pop();
-                }
+        for (int i = arr.length - 1; i >= 0; i--) {
+            while (!stack.isEmpty() && stack.peek() <= arr[i]) {
+                stack.pop();
             }
             output[i] = stack.isEmpty() ? -1 : stack.peek();
             stack.push(arr[i]);

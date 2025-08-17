@@ -16,22 +16,18 @@ public class ReversedIterativeLinkedList {
     }
 
     Node reverse(Node head) {
-        if(head ==null || head.next == null){
+        if (head == null || head.next == null) {
             return head;
         }
-        Node prev = head;
-        Node current = head.next;
+        Node prev = null;
+        Node current = head;
         while (current != null) {
             Node next = current.next;
             current.next = prev;
-
-            //update
             prev = current;
             current = next;
         }
-        head.next = null;
-        head = prev;
-        return head;
+        return prev;
     }
 
     void printList(Node node) {

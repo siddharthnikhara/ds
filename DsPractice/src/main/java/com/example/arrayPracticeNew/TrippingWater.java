@@ -7,31 +7,26 @@ public class TrippingWater {
     }
 
     static int trippingWater(int arr[], int n) {
-        int left = 0;
-        int right = n - 1;
+        int left = 0, right = arr.length - 1;
         int leftBar = arr[0];
-        int rightBar = arr[n - 1];
+        int rightBar = arr[right];
         int ans = 0;
+
         while (left <= right) {
-            //which bar is limiting bar
-            //left, right?
-            if (leftBar < rightBar) {
-                //if element that we are seeing right now, if that becomes the highest left, it will not store any water
-                if (arr[left] > leftBar) {
+            if (leftBar <= rightBar) {
+                if (arr[left] >= leftBar) {
                     leftBar = arr[left];
-                }
-                //it will store water
-                else {
+                } else {
                     ans += leftBar - arr[left];
-                    left++;
                 }
+                left++; // always move
             } else {
-                if (arr[right] > rightBar) {
+                if (arr[right] >= rightBar) {
                     rightBar = arr[right];
                 } else {
                     ans += rightBar - arr[right];
-                    right--;
                 }
+                right--; // always move
             }
         }
         return ans;

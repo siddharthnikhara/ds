@@ -20,6 +20,26 @@ public class LinkedList {
 		}
 	}
 
+	class ListNode {
+		int val;
+		ListNode next;
+		ListNode(int x) { val = x; }
+	}
+
+	void removeNthNode(ListNode head, int n) {
+		ListNode second = head;
+		int count =1;
+		while(second!=null){
+			if(count !=n){
+				count++;
+				if(count == n){
+					second.next=second.next.next;
+				}
+				second = second.next;
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		LinkedList llist = new LinkedList();
 		Node first = new Node(1);

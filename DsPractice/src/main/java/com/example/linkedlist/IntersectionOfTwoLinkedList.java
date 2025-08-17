@@ -26,6 +26,19 @@ public class IntersectionOfTwoLinkedList {
         return null;
     }
 
+    public Node getIntersectionNode1(Node headA, Node headB) {
+        if (headA == null || headB == null) return null;
+
+        Node a = headA;
+        Node b = headB;
+
+        while (a != b) {
+            a = (a == null) ? headB : a.next;
+            b = (b == null) ? headA : b.next;
+        }
+        return a; // will be intersection node or null
+    }
+
     public static void main(String[] args) {
         IntersectionOfTwoLinkedList list = new IntersectionOfTwoLinkedList();
 
@@ -49,7 +62,7 @@ public class IntersectionOfTwoLinkedList {
 
         head1.next.next.next = null;
 
-        Node intersectionPoint = list.getIntersectionNode(head1, head2);
+        Node intersectionPoint = list.getIntersectionNode1(head1, head2);
 
         if (intersectionPoint == null) {
             System.out.print(" No Intersection Point \n");

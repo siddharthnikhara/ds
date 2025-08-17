@@ -50,7 +50,49 @@ public class ReverseLevelOrder {
         tree.root.right.right = new Node(7);
         System.out.println("Level Order traversal of binary tree is :");
         tree.reverseLevelOrder(tree.root);
+        tree.reverseLevelOrderWithNewlines(tree.root);
     }
+
+    class NodeLevel {
+        Node node;
+        int level;
+
+        NodeLevel(Node node, int level) {
+            this.node = node;
+            this.level = level;
+        }
+    }
+
+    public void reverseLevelOrderWithNewlines(Node root) {
+        Stack<NodeLevel> stack = new Stack<>();
+        Queue<NodeLevel> queue = new LinkedList<>();
+
+        queue.add(new NodeLevel(root, 0));
+
+        while (!queue.isEmpty()) {
+            NodeLevel current = queue.remove();
+            stack.push(current);
+
+            // Push right first to ensure left comes out first in reverse
+            if (current.node.right != null) {
+                queue.add(new NodeLevel(current.node.right, current.level + 1));
+            }
+            if (current.node.left != null) {
+                queue.add(new NodeLevel(current.node.left, current.level + 1));
+            }
+        }
+
+        int currentLevel = -1;
+        while (!stack.isEmpty()) {
+            NodeLevel nl = stack.pop();
+            if (nl.level != currentLevel) {
+                currentLevel = nl.level;
+                System.out.println(); // new level
+            }
+            System.out.print(nl.node.data + " ");
+        }
+    }
+
 }
 
 
